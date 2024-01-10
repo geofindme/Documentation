@@ -65,7 +65,7 @@ Host: api.geofind.me
 ### Response Fields
 
 - `type`: Type of the response (FeatureCollection).
-- `features`: Array of features with detailed information about hierarchical address listing.
+- `features`: List of addresses.
 - `licence`: Link to the geofind.me licence.
 
 ### How to Use
