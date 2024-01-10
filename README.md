@@ -11,7 +11,7 @@ Empower your applications with geofind.me's comprehensive location services. Thi
 
 ### GeoJSON
 
-The majority of API endpoints return responses in GeoJSON format. Therefore, understanding GeoJSON is crucial.
+The majority of geofind.me API endpoints return responses in GeoJSON format. Therefore, understanding GeoJSON is crucial.
 
 GeoJSON is a format for encoding geographical data structures, primarily used for representing geographic features with their non-spatial attributes. It is based on the JavaScript Object Notation (JSON) standard and is commonly used in web mapping applications. GeoJSON is widely used for exchanging and representing geographic data due to its simplicity, human-readable format, and broad compatibility with web technologies.
 
