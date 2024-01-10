@@ -1,9 +1,104 @@
 Empower your applications with geofind.me's comprehensive location services. This API documentation provides developers with detailed information on various endpoints that cater to reverse geocoding, place identification, exploring nearby locations, address listing, hydrographic data exploration, and GeoIP analysis.
 
-GeoIP Analysis
+### Endpoints
 
-- [Endpoint /geoip](/endpoint-geoip)
-- [Endpoint /reverse](/endpoint-reverse)
-- [Endpoint /place](/endpoint-place)
-- [Endpoint /near_by](/endpoint-near_by)
-- [Endpoint /list](/endpoint-list)
+- [GeoIP Analysis - /geoip](/endpoint-geoip)
+- [Reverse Geocoding - /reverse](/endpoint-reverse)
+- [Place Identification - /placee](/endpoint-place)
+- [Explore Nearby Locations - /near_by](/endpoint-near_by)
+- [Address Listing - /list](/endpoint-list)
+- [Hydrographic Data Exploration - /hydro](/endpoint-hydro)
+
+### GeoJSON
+
+The majority of API endpoints return responses in GeoJSON format. Therefore, understanding GeoJSON is crucial.
+
+GeoJSON is a format for encoding geographical data structures, primarily used for representing geographic features with their non-spatial attributes. It is based on the JavaScript Object Notation (JSON) standard and is commonly used in web mapping applications. GeoJSON is widely used for exchanging and representing geographic data due to its simplicity, human-readable format, and broad compatibility with web technologies.
+
+#### Geometry Types:
+
+- Point: Represents a single geographical point.
+- LineString: Represents a sequence of connected points to create a line.
+- Polygon: Represents an area defined by a closed loop of coordinates.
+- MultiPoint, MultiLineString, MultiPolygon: Represent multiple points, lines, or polygons, respectively.
+
+#### Feature Collection:
+
+GeoJSON can contain a collection of features, each with its own set of properties and geometry.
+
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [28.9771, 40.8420]
+      },
+	  "properties": {
+        "name": "Golden Horn",
+        "category": "Bay"
+      }
+	},
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [125.6, 10.1],
+          [125.8, 10.2],
+          [126.0, 10.3]
+        ]
+      },
+      "properties": {
+        "name": "Route 1",
+        "category": "Path"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [125.6, 10.4],
+            [125.7, 10.5],
+            [125.8, 10.4],
+            [125.6, 10.4]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Area X",
+        "category": "Zone"
+      }
+    }
+  ]
+}
+```
+
+#### Properties:
+
+Features can have additional attributes, referred to as properties, providing non-spatial information about the feature.
+
+#### CRS (Coordinate Reference System):
+
+GeoJSON supports both "name" and "link" methods for specifying the coordinate reference system.
+
+### Common Types
+
+#### Resolution: Enum
+
+- 0: unspecified
+- 1: country
+- 2: region
+- 3: admin
+- 4: city
+- 5: locality
+
+#### SortBy: Enum
+
+- 0: unspecified
+- 1: by distance
+- 2: by importance
