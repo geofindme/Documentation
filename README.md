@@ -9,6 +9,33 @@ Empower your applications with geofind.me's comprehensive location services. Thi
 - [Address Listing - /list](/endpoint-list)
 - [Hydrographic Data Exploration - /hydro](/endpoint-hydro)
 
+### Common Types
+
+#### Resolution: Enum
+
+- 0: unspecified
+- 1: country
+- 2: region
+- 3: admin
+- 4: city
+- 5: locality
+
+#### SortBy: Enum
+
+- 0: unspecified
+- 1: by distance
+- 2: by importance
+
+#### Summary: Struct
+
+Places returned from geocoding endpoints have `summary` field. This field stores feature indexes its related to.
+
+- `country_code`
+- `country`
+- `admin`
+- `city`
+- `locality`
+
 ### GeoJSON
 
 The majority of geofind.me API endpoints return responses in GeoJSON format. Therefore, understanding GeoJSON is crucial.
@@ -89,20 +116,3 @@ Features can have additional attributes, referred to as properties, providing no
 #### CRS (Coordinate Reference System):
 
 GeoJSON supports both "name" and "link" methods for specifying the coordinate reference system.
-
-### Common Types
-
-#### Resolution: Enum
-
-- 0: unspecified
-- 1: country
-- 2: region
-- 3: admin
-- 4: city
-- 5: locality
-
-#### SortBy: Enum
-
-- 0: unspecified
-- 1: by distance
-- 2: by importance
