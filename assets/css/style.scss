@@ -3,4 +3,6 @@
 
 @import "{{ site.theme }}";
 
-text-color: #ffffff;
+body {
+	background-color: black;
+}
