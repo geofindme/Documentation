@@ -1,8 +1,8 @@
-## Endpoint /near_by
+## Explore Nearby Locations - /near_by
 
 The `/near_by` endpoint of geofind.me allows you to discover nearby locations based on specific coordinates.
 
-```http
+```
 GET /near_by?resolution={resolution}&lat={latitude}&lon={longitude}&sort_by={sort_order}&accept_language={language}&normalize_address_names={true/false}&limit={limit}
 ```
 
@@ -16,9 +16,8 @@ GET /near_by?resolution={resolution}&lat={latitude}&lon={longitude}&sort_by={sor
 
 ### Example Request
 
-```http
+```
 GET /near_by?resolution=3&lat=37.751&lon=-97.822&sort_by=1&accept_language=en&normalize_address_names=true&limit=5
-Host: api.geofind.me
 ```
 
 ### Example Response
@@ -63,15 +62,10 @@ Host: api.geofind.me
 }
 ```
 
-### Response Fields
+### Response
+
+The `/near_by` endpoint provides a response in the GeoJSON format, widely used for representing geographical data. GeoJSON is a standard that encapsulates geographical locations, properties, and other relevant information.
 
 - `type`: Type of the response (FeatureCollection).
-- `features`: Array of features with detailed information about nearby locations.
+- `features`: List of nearby locations.
 - `licence`: Link to the geofind.me licence.
-
-### How to Use
-
-1. Make a GET request to `/near_by` with the desired resolution, coordinates, and sortby.
-2. Receive a list of nearby locations based on the specified coordinates.
-
-Use the `/near_by` endpoint to discover nearby locations based on specific coordinates.

@@ -1,8 +1,8 @@
-## Endpoint /reverse
+## Reverse Geocoding - /reverse
 
 The `/reverse` endpoint of geofind.me provides reverse geocoding, allowing you to obtain address information based on geographical coordinates.
 
-```http
+```
 GET /reverse?lat={latitude}&lon={longitude}&accept_language={language}&normalize_address_names={true/false}&include_names={true/false}&include_extra_tags={true/false}&include_geometry={true/false}
 ```
 
@@ -16,9 +16,8 @@ GET /reverse?lat={latitude}&lon={longitude}&accept_language={language}&normalize
 
 ### Example Request
 
-```http
+```
 GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=true&include_names=true&include_extra_tags=true&include_geometry=false
-Host: api.geofind.me
 ```
 
 ### Example Response
@@ -130,7 +129,9 @@ Host: api.geofind.me
 }
 ```
 
-### Response Fields
+### Response
+
+The `/reverse` endpoint provides a response in the GeoJSON format, widely used for representing geographical data. GeoJSON is a standard that encapsulates geographical locations, properties, and other relevant information.
 
 - `type`: Type of the response (FeatureCollection).
 - `lat`: Latitude coordinate of the queried location.
@@ -145,10 +146,3 @@ Host: api.geofind.me
 - `linked_places`: Linked places associated with the location.
 - `summary`: Summary information about the location (country code, country, admin, etc..).
 - `licence`: Link to the geofind.me licence.
-
-### How to Use
-
-1. Make a GET request to `/reverse` with the desired latitude and longitude.
-2. Receive detailed reverse geocoding information including address details and linked places.
-
-Use the `/reverse` endpoint to obtain address information based on geographical coordinates.

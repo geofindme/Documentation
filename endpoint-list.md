@@ -1,8 +1,8 @@
-## Endpoint /list
+# Address Listing - /list
 
 The `/list` endpoint of geofind.me allows you to retrieve hierarchical address information based on resolution and optional parameters.
 
-```http
+```
 GET /list?resolution={resolution}&accept_language={language}&normalize_address_names={true/false}&country_code={country_code}&region_id={region_id}&admin_id={admin_id}
 ```
 
@@ -15,9 +15,8 @@ GET /list?resolution={resolution}&accept_language={language}&normalize_address_n
 
 ### Example Request
 
-```http
+```
 GET /list?resolution=3&accept_language=en&normalize_address_names=true&country_code=nl
-Host: api.geofind.me
 ```
 
 ### Example Response
@@ -62,15 +61,10 @@ Host: api.geofind.me
 }
 ```
 
-### Response Fields
+### Response
+
+The `/list` endpoint provides a response in the GeoJSON format, widely used for representing geographical data. GeoJSON is a standard that encapsulates geographical locations, properties, and other relevant information.
 
 - `type`: Type of the response (FeatureCollection).
 - `features`: List of addresses.
 - `licence`: Link to the geofind.me licence.
-
-### How to Use
-
-1. Make a GET request to `/list` with the desired resolution and optional parameters.
-2. Receive a hierarchical address listing based on the specified resolution and optional paramters.
-
-Use the `/list` endpoint to obtain hierarchical address information based on resolution and optional paramters.

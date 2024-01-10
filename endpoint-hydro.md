@@ -1,4 +1,4 @@
-## Hydrographic Data Exploration - /hydro Endpoint
+## Hydrographic Data Exploration - /hydro
 
 The `/hydro` endpoint provides information about water bodies based on given coordinates. Explore and discover nearby seas, lakes, and more.
 
@@ -14,7 +14,7 @@ GET /hydro?lat={latitude}&lon={longitude}&accept_language={language}&normalize_a
 ### Example Request
 
 ```
-GET https://api.geofind.me/hydro?lat=40.8420&lon=28.9771&accept_language=en&normalize_address_names=true
+GET /hydro?lat=40.8420&lon=28.9771&accept_language=en&normalize_address_names=true
 ```
 
 ### Example Response
@@ -42,7 +42,9 @@ GET https://api.geofind.me/hydro?lat=40.8420&lon=28.9771&accept_language=en&norm
 }
 ```
 
-### Response Fields
+### Response
+
+The `/hydro` endpoint provides a response in the GeoJSON format, widely used for representing geographical data. GeoJSON is a standard that encapsulates geographical locations, properties, and other relevant information.
 
 - `type`: Type of the response (FeatureCollection).
 - `features`: List of found hydros.

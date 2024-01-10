@@ -1,8 +1,8 @@
-## Endpoint /place
+## Place Identification - /place
 
 The `/place` endpoint of geofind.me provides address information based on a place ID.
 
-```http
+```
 GET /place?id={place_id}&accept_language={language}&normalize_address_names={true/false}&include_names={true/false}&include_extra_tags={true/false}&include_geometry={true/false}
 ```
 
@@ -15,9 +15,8 @@ GET /place?id={place_id}&accept_language={language}&normalize_address_names={tru
 
 ### Example Request
 
-```http
+```
 GET /place?id=R1070327&accept_language=en&normalize_address_names=true&include_names=true&include_extra_tags=true&include_geometry=false
-Host: api.geofind.me
 ```
 
 ### Example Response
@@ -129,7 +128,9 @@ Host: api.geofind.me
 }
 ```
 
-### Response Fields
+### Response
+
+The `/place` endpoint provides a response in the GeoJSON format, widely used for representing geographical data. GeoJSON is a standard that encapsulates geographical locations, properties, and other relevant information.
 
 - `type`: Type of the response (FeatureCollection).
 - `lat`: Latitude coordinate of the queried location.
@@ -144,10 +145,3 @@ Host: api.geofind.me
 - `linked_places`: Linked places associated with the location.
 - `summary`: Summary information about the location (country code, country, admin, etc..).
 - `licence`: Link to the geofind.me licence.
-
-### How to Use
-
-1. Make a GET request to `/place` with the desired place ID.
-2. Receive detailed address information and linked places for the specified location.
-
-Use the `/place` endpoint to obtain address information based on a place ID.
