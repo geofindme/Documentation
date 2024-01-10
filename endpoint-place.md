@@ -1,28 +1,28 @@
-## /reverse
+## /place
 
-The `/reverse` endpoint of geofind.me provides reverse geocoding, allowing you to obtain address information based on geographical coordinates.
+The `/place` endpoint of geofind.me provides address information based on a place ID.
 
-### Endpoint:
+### Endpoint
 
 ```http
-GET /reverse?lat={latitude}&lon={longitude}&accept_language={language}&normalize_address_names={true/false}&include_names={true/false}&include_extra_tags={true/false}&include_geometry={true/false}
+GET /place?id={place_id}&accept_language={language}&normalize_address_names={true/false}&include_names={true/false}&include_extra_tags={true/false}&include_geometry={true/false}
 ```
 
-- `lat` (required): Latitude coordinate.
-- `lon` (required): Longitude coordinate.
+- `id` (required): The place ID for which you want to obtain address information.
 - `accept_language` (optional): Preferred language for address names.
 - `normalize_address_names` (optional): Normalize address names (true/false, default is false).
 - `include_names` (optional): Include various names in the response (true/false, default is false).
 - `include_extra_tags` (optional): Include extra tags in the response (true/false, default is false).
 - `include_geometry` (optional): Include geometry information in the response (true/false, default is false).
 
-### Example Request:
+#### Example Request
 
 ```http
-GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=true&include_names=true&include_extra_tags=true&include_geometry=false
+GET /place?id=R1070327&accept_language=en&normalize_address_names=true&include_names=true&include_extra_tags=true&include_geometry=false
+Host: api.geofind.me
 ```
 
-### Example Response:
+#### Example Response
 
 ```json
 {
@@ -57,8 +57,8 @@ GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=t
         "address_rank": 12,
         "admin_level": 6,
         "is_address": true,
-        "distance": 31902.62035389154,
-        "bearing": 308.77603766533156
+        "distance": 0,
+        "bearing": -1
       }
     },
     {
@@ -72,7 +72,7 @@ GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=t
         "address_rank": 8,
         "admin_level": 4,
         "is_address": true,
-        "distance": -1,
+        "distance": 0.000005870726440549065,
         "bearing": -1
       }
     },
@@ -87,7 +87,7 @@ GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=t
         "address_rank": 4,
         "admin_level": 2,
         "is_address": true,
-        "distance": -1,
+        "distance": 0,
         "bearing": -1
       }
     },
@@ -101,7 +101,7 @@ GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=t
         "address_rank": 4,
         "admin_level": 0,
         "is_address": false,
-        "distance": -1,
+        "distance": 0,
         "bearing": -1
       }
     }
@@ -131,7 +131,7 @@ GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=t
 }
 ```
 
-### Response Fields:
+#### Response Fields
 
 - `type`: Type of the response (FeatureCollection).
 - `lat`: Latitude coordinate of the queried location.
@@ -141,15 +141,15 @@ GET /reverse?lat=37.751&lon=-97.822&accept_language=en&normalize_address_names=t
 - `names`: Various names associated with the location.
 - `extra_tags`: Extra tags associated with the location.
 - `is_area`: Indicates whether the location is an area (true/false).
-- `address`: Address information (deprecated).
+- `address`: Address index on `features`.
 - `features`: Array of features with detailed information about the location.
 - `linked_places`: Linked places associated with the location.
-- `summary`: Summary information about the location (country code, country, admin level).
+- `summary`: Summary information about the location (country code, country, admin, etc..).
 - `licence`: Link to the geofind.me licence.
 
-### How to Use:
+### How to Use
 
-1. Make a GET request to `/reverse` with the desired latitude and longitude.
-2. Receive detailed reverse geocoding information including address details and linked places.
+1. Make a GET request to `/place` with the desired place ID.
+2. Receive detailed address information and linked places for the specified location.
 
-Use the `/reverse` endpoint to obtain address information based on geographical coordinates.
+Use the `/place` endpoint to obtain address information based on a place ID.
