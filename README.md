@@ -9,6 +9,22 @@ Empower your applications with geofind.me's comprehensive location services. Thi
 - [Address Listing - /list](/endpoint-list)
 - [Hydrographic Data Exploration - /hydro](/endpoint-hydro)
 
+### Authentication
+
+To access the geofind.me API, authentication is required using the `X-API-Key` HTTP header. Follow the steps below to include your API key in the request:
+
+#### Obtain an API Key
+
+Before making requests, obtain your unique API key by [registering](https://www.geofind.me/signup) on the geofind.me.
+
+#### Include API Key in Requests
+
+Add the obtained API key to your HTTP requests using the `X-API-Key` header. For example:
+
+```sh
+curl -H "X-API-Key: YOUR_API_KEY" "https://api.geofind.me/geoip?ip=8.8.8.8"
+```
+
 ### Common Types
 
 #### Resolution: Enum
