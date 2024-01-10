@@ -4,7 +4,7 @@ Empower your applications with geofind.me's comprehensive location services. Thi
 
 - [GeoIP Analysis - /geoip](/endpoint-geoip)
 - [Reverse Geocoding - /reverse](/endpoint-reverse)
-- [Place Identification - /placee](/endpoint-place)
+- [Place Identification - /place](/endpoint-place)
 - [Explore Nearby Locations - /near_by](/endpoint-near_by)
 - [Address Listing - /list](/endpoint-list)
 - [Hydrographic Data Exploration - /hydro](/endpoint-hydro)
@@ -14,6 +14,10 @@ Empower your applications with geofind.me's comprehensive location services. Thi
 The majority of API endpoints return responses in GeoJSON format. Therefore, understanding GeoJSON is crucial.
 
 GeoJSON is a format for encoding geographical data structures, primarily used for representing geographic features with their non-spatial attributes. It is based on the JavaScript Object Notation (JSON) standard and is commonly used in web mapping applications. GeoJSON is widely used for exchanging and representing geographic data due to its simplicity, human-readable format, and broad compatibility with web technologies.
+
+#### The GeoJSON Specification (RFC 7946)
+
+In 2015, the Internet Engineering Task Force (IETF), in conjunction with the original specification authors, formed a GeoJSON WG to standardize GeoJSON. [RFC 7946](https://tools.ietf.org/html/rfc7946) was published in August 2016 and is the new standard specification of the GeoJSON format, replacing the 2008 GeoJSON specification.
 
 #### Geometry Types:
 
@@ -36,7 +40,7 @@ GeoJSON can contain a collection of features, each with its own set of propertie
         "type": "Point",
         "coordinates": [28.9771, 40.8420]
       },
-	  "properties": {
+      "properties": {
         "name": "Golden Horn",
         "category": "Bay"
       }
