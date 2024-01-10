@@ -1,8 +1,6 @@
-## /list
+## Endpoint /list
 
 The `/list` endpoint of geofind.me allows you to retrieve hierarchical address information based on resolution and optional parameters.
-
-### Endpoint
 
 ```http
 GET /list?resolution={resolution}&accept_language={language}&normalize_address_names={true/false}&country_code={country_code}&region_id={region_id}&admin_id={admin_id}
@@ -15,14 +13,14 @@ GET /list?resolution={resolution}&accept_language={language}&normalize_address_n
 - `region_id` (optional): Region ID for filtering results.
 - `admin_id` (optional): Admin ID for filtering results.
 
-#### Example Request
+### Example Request
 
 ```http
 GET /list?resolution=3&accept_language=en&normalize_address_names=true&country_code=nl
 Host: api.geofind.me
 ```
 
-#### Example Response
+### Example Response
 
 ```json
 {
@@ -43,13 +41,28 @@ Host: api.geofind.me
         "bearing": -1
       }
     },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "R47407",
+        "category": "boundary",
+        "type": "administrative",
+        "place_type": "state",
+        "name": "Flevoland",
+        "address_rank": 8,
+        "admin_level": 4,
+        "is_address": true,
+        "distance": 0,
+        "bearing": -1
+      }
+    },
     //... (other features)
   ],
   "licence": "https://www.geofind.me/licence"
 }
 ```
 
-#### Response Fields
+### Response Fields
 
 - `type`: Type of the response (FeatureCollection).
 - `features`: Array of features with detailed information about hierarchical address listing.

@@ -1,8 +1,6 @@
-## /place
+## Endpoint /place
 
 The `/place` endpoint of geofind.me provides address information based on a place ID.
-
-### Endpoint
 
 ```http
 GET /place?id={place_id}&accept_language={language}&normalize_address_names={true/false}&include_names={true/false}&include_extra_tags={true/false}&include_geometry={true/false}
@@ -15,14 +13,14 @@ GET /place?id={place_id}&accept_language={language}&normalize_address_names={tru
 - `include_extra_tags` (optional): Include extra tags in the response (true/false, default is false).
 - `include_geometry` (optional): Include geometry information in the response (true/false, default is false).
 
-#### Example Request
+### Example Request
 
 ```http
 GET /place?id=R1070327&accept_language=en&normalize_address_names=true&include_names=true&include_extra_tags=true&include_geometry=false
 Host: api.geofind.me
 ```
 
-#### Example Response
+### Example Response
 
 ```json
 {
@@ -131,7 +129,7 @@ Host: api.geofind.me
 }
 ```
 
-#### Response Fields
+### Response Fields
 
 - `type`: Type of the response (FeatureCollection).
 - `lat`: Latitude coordinate of the queried location.

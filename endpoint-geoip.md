@@ -1,8 +1,6 @@
-## /geoip
+## Endpoint /geoip
 
 The `/geoip` endpoint of geofind.me provides GeoIP analysis, allowing you to obtain geographical coordinates and ASN (Autonomous System Number) information based on IP addresses.
-
-### Endpoint
 
 ```http
 GET /geoip?ip={ip_address}
@@ -10,14 +8,14 @@ GET /geoip?ip={ip_address}
 
 - `ip` (required): The IP address for which you want to perform GeoIP analysis.
 
-#### Example Request
+### Example Request
 
 ```http
 GET /geoip?ip=8.8.8.8
 Host: api.geofind.me
 ```
 
-#### Example Response
+### Example Response
 
 ```json
 {
@@ -31,7 +29,7 @@ Host: api.geofind.me
 }
 ```
 
-#### Response Fields
+### Response Fields
 
 - `autonomous_system_number`: ASN (Autonomous System Number) associated with the IP.
 - `autonomous_system_organization`: Organization associated with the ASN.
