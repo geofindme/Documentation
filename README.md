@@ -1,4 +1,9 @@
-Empower your applications with geofind.me's comprehensive location services. This API documentation provides developers with detailed information on various endpoints that cater to reverse geocoding, place identification, exploring nearby locations, address listing, hydrographic data exploration, and GeoIP analysis.
+Empower your applications with [geofind.me](https://www.geofind.me/)'s comprehensive location services. This API documentation provides developers with detailed information on various endpoints that cater to reverse geocoding, place identification, exploring nearby locations, address listing, hydrographic data exploration, and GeoIP analysis.
+
+### [geofind.me](https://www.geofind.me/)
+
+- [Signup](https://www.geofind.me/signup)
+- [Login](https://www.geofind.me/login)
 
 ### Endpoints
 
@@ -11,11 +16,11 @@ Empower your applications with geofind.me's comprehensive location services. Thi
 
 ### Authentication
 
-To access the geofind.me API, authentication is required using the `X-API-Key` HTTP header. Follow the steps below to include your API key in the request:
+To access the [geofind.me](https://www.geofind.me/) API, authentication is required using the `X-API-Key` HTTP header. Follow the steps below to include your API key in the request:
 
 #### Obtain an API Key
 
-Before making requests, obtain your unique API key by [registering](https://www.geofind.me/signup) on the geofind.me.
+Before making requests, obtain your unique API key by [registering](https://www.geofind.me/signup) on the [geofind.me](https://www.geofind.me/).
 
 #### Include API Key in Requests
 
@@ -54,7 +59,7 @@ Places returned from geocoding endpoints have `summary` field. This field stores
 
 ### GeoJSON
 
-The majority of geofind.me API endpoints return responses in GeoJSON format. Therefore, understanding GeoJSON is crucial.
+The majority of [geofind.me](https://www.geofind.me/) API endpoints return responses in GeoJSON format. Therefore, understanding GeoJSON is crucial.
 
 GeoJSON is a format for encoding geographical data structures, primarily used for representing geographic features with their non-spatial attributes. It is based on the JavaScript Object Notation (JSON) standard and is commonly used in web mapping applications. GeoJSON is widely used for exchanging and representing geographic data due to its simplicity, human-readable format, and broad compatibility with web technologies.
 
