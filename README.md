@@ -34,18 +34,18 @@ curl -H "X-API-Key: YOUR_API_KEY" "https://api.geofind.me/geoip?ip=8.8.8.8"
 
 #### Resolution: Enum
 
-- 0: unspecified
-- 1: country
-- 2: region
-- 3: admin
-- 4: city
-- 5: locality
+- `0`: unspecified
+- `1`: country
+- `2`: region
+- `3`: admin
+- `4`: city
+- `5`: locality
 
 #### SortBy: Enum
 
-- 0: unspecified
-- 1: by distance
-- 2: by importance
+- `0`: unspecified
+- `1`: by distance
+- `2`: by importance
 
 #### Summary: Struct
 
@@ -53,9 +53,9 @@ Places returned from geocoding endpoints have `summary` field. This field stores
 
 - `country_code`
 - `country`
-- `admin`
-- `city`
-- `locality`
+- `admin`: administrative area: state or province
+- `city`: city, county, etc...
+- `locality`: village, neighborhood, sburb, etc...
 
 ### GeoJSON
 
